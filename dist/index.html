@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face, Hand & Expression Tracker</title>
+    <script type="module" crossorigin src="./assets/index-DYwI6Dv8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CS2npXrv.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <div class="eyebrow">ELECTRON + MEDIAPIPE</div>
+            <h1>Vision Tracker</h1>
+          </div>
+
+          <div class="fps-pill">
+            <span class="fps-dot"></span>
+            <span id="fpsText">-- FPS</span>
+          </div>
+        </div>
+
+        <div class="camera" id="cameraWrap">
+          <video id="camera" autoplay muted playsinline></video>
+          <canvas id="overlay"></canvas>
+
+          <div class="camera__status" id="statusBadge">
+            <span class="status-dot"></span>
+            <span id="statusText">Загрузка моделей...</span>
+          </div>
+
+          <div class="finger-counter" id="fingerCountText">Пальцы: 0</div>
+
+          <div class="mood-panel" id="moodPanel" data-mood="unknown">
+            <div class="mood-panel__eyebrow">ВЫРАЖЕНИЕ ЛИЦА</div>
+            <div class="mood-panel__main">
+              <span class="mood-panel__emoji" id="moodEmoji">—</span>
+              <span class="mood-panel__label" id="moodText">Загрузка...</span>
+              <span class="mood-panel__confidence" id="moodConfidence">--%</span>
+            </div>
+            <div class="mood-panel__metrics">
+              <span>Улыбка <b id="smileMetric">0%</b></span>
+              <span>Брови <b id="browMetric">0%</b></span>
+              <span>Хмурость <b id="frownMetric">0%</b></span>
+            </div>
+          </div>
+
+          <div class="gesture-state" id="gestureState" data-state="idle"></div>
+        </div>
+
+        <div class="footer-row">
+          <span>Предварительный просмотр</span>
+          <div class="tracking-states">
+            <span id="faceState">Лицо не найдено</span>
+            <span class="state-divider"></span>
+            <span id="handState">Рука не найдена</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>
