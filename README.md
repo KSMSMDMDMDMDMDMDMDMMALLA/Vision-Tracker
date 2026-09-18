@@ -16,12 +16,11 @@ npm run dev
 - копирует WASM-файлы MediaPipe из `node_modules` в `public/wasm`;
 - скачивает официальную модель BlazeFace short-range в `public/models`.
 
-## Проверка production-режима
+## Запуск
 
 ```bash
 npm start
 ```
 
-Сначала собирается Vite, затем Electron загружает приложение через локальную защищённую схему `faceapp://`.
 
 ## by alwaysnear
